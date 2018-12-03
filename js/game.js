@@ -222,6 +222,9 @@ function keyPressed() {
         bonus = [];
         restart.play();
         screen = 0;
+        boost.stop();
+        dstar.boosting(false);
+        dstar.setRotation(0);
         }
     } 
 }  
