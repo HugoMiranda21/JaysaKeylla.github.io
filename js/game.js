@@ -55,7 +55,7 @@ function newAsteroids() {
         enemies.push(new Enemy());
 
         if (time > 200) {
-            time -= 200;
+            time = time - 200;
         }
     }
 }
@@ -123,6 +123,7 @@ function draw() {
                         var newEnemies = enemies[j].breakup();
                         enemies = enemies.concat(newEnemies);
                         score = score + 100; //contagem de score ETAPA 06 o asteroide comum vale 100 pontos
+                        enemies.push(new Enemy());
                     }
                     for (var k = 0; k < 6; k++) {
                         image(explosion[k], (enemies[j].pos.x-250), (enemies[j].pos.y-200));
@@ -132,6 +133,7 @@ function draw() {
                     score = score + 100;
                     enemies.splice(j, 1);
                     lasers.splice(i, 1);
+                    enemies.push(new Enemy());
                     break;
                 }
             }
@@ -147,10 +149,12 @@ function draw() {
 
                     hitbonus.play(); //efeito sonoro quando o asteroide bonus é destruído    
                     score = score + 1000; //o asteroide bonus vale 1000 pontos
+                    enemies.push(new Enemy());
 
 
                     bonus.splice(k, 1);
                     lasers.splice(t, 1);
+                    enemies.push(new Enemy());
                     break;
                 }
             }
