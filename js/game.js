@@ -44,7 +44,7 @@ function setup() {
     frameRate(25);
     createCanvas(windowWidth - 10, windowHeight - 8);
     dstar = new Dstar();
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 5; i++) {
         enemies.push(new Enemy());
     }
  
