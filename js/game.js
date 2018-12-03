@@ -13,7 +13,7 @@ var levelsound;
 var boost;
 var level = 1;
 var screen = 0; //ETAPA 09: Mudança de telas
-var time = 0;
+var time = 600;
 var multiplicador = 1;
 var hitasteroid;
 var explosion = [];
@@ -49,8 +49,15 @@ function setup() {
     }
  
 }
+function newAsteroids() {
+    if (screen == 1) {
+        enemies.push(new Enemy());
 
-
+        if (time > 200) {
+            time -= 200;
+        }
+    }
+}
 
 function draw() {
     
