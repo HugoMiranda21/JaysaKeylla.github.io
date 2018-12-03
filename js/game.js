@@ -47,16 +47,12 @@ function setup() {
     for (var i = 0; i < 10; i++) {
         enemies.push(new Enemy());
     }
-    setInterval(newAsteroids, time);
+ 
 }
 
 function newAsteroids() {
     if (screen == 1) {
         enemies.push(new Enemy());
-
-        if (time > 200) {
-            time += 200;
-        }
     }
 }
 
@@ -131,6 +127,7 @@ function draw() {
                     }
                     boom.play(); //efeito sonoro quando o asteroide é destruído
                     score = score + 100;
+                    enemies.push(new Enemy());
                     enemies.splice(j, 1);
                     lasers.splice(i, 1);
           
