@@ -55,7 +55,7 @@ function newAsteroids() {
         enemies.push(new Enemy());
 
         if (time > 200) {
-            time = time - 200;
+            time--;
         }
     }
 }
