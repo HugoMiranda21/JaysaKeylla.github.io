@@ -13,7 +13,7 @@ var levelsound;
 var boost;
 var level = 1;
 var screen = 0; //ETAPA 09: Mudança de telas
-var time = 10000;
+var time = 100000;
 var multiplicador = 1;
 var hitasteroid;
 var explosion = [];
@@ -227,8 +227,6 @@ function keyPressed() {
         restart.play();
         screen = 0;
         boost.stop();
-        dstar.isboosting(false);
-        dstar.setRotation(0);
         }
     } 
 }  
