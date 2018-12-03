@@ -50,11 +50,7 @@ function setup() {
  
 }
 
-function newAsteroids() {
-    if (screen == 1) {
-        enemies.push(new Enemy());
-    }
-}
+
 
 function draw() {
     
