@@ -133,7 +133,7 @@ function draw() {
                     score = score + 100;
                     enemies.splice(j, 1);
                     lasers.splice(i, 1);
-                    enemies.push(new Enemy());
+          
                     break;
                 }
             }
@@ -149,7 +149,7 @@ function draw() {
 
                     hitbonus.play(); //efeito sonoro quando o asteroide bonus é destruído    
                     score = score + 1000; //o asteroide bonus vale 1000 pontos
-                    enemies.push(new Enemy());
+                    
 
 
                     bonus.splice(k, 1);
