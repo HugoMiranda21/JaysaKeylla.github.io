@@ -13,7 +13,7 @@ var levelsound;
 var boost;
 var level = 1;
 var screen = 0; //ETAPA 09: Mudança de telas
-var time = 1000;
+var time = 6000;
 var multiplicador = 1;
 var hitasteroid;
 var explosion = [];
@@ -123,7 +123,7 @@ function draw() {
                         var newEnemies = enemies[j].breakup();
                         enemies = enemies.concat(newEnemies);
                         score = score + 100; //contagem de score ETAPA 06 o asteroide comum vale 100 pontos
-                        enemies.push(new Enemy());
+                      
                     }
                     for (var k = 0; k < 6; k++) {
                         image(explosion[k], (enemies[j].pos.x-250), (enemies[j].pos.y-200));
@@ -154,7 +154,7 @@ function draw() {
 
                     bonus.splice(k, 1);
                     lasers.splice(t, 1);
-                    enemies.push(new Enemy());
+                    
                     break;
                 }
             }
