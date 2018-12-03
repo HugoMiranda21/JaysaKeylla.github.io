@@ -227,6 +227,9 @@ function keyPressed() {
         restart.play();
         screen = 0;
         boost.stop();
+        boom.stop();
+        shot.stop();
+       
         }
     } 
 }  
