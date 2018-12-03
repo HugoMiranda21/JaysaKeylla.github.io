@@ -223,7 +223,7 @@ function keyPressed() {
         restart.play();
         screen = 0;
         boost.stop();
-        dstar.boosting(false);
+        dstar.isboosting(false);
         dstar.setRotation(0);
         }
     } 
