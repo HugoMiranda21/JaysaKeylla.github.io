@@ -91,11 +91,11 @@ function draw() {
         textFont(font);
         textSize(30);
         fill(255);
-        text("Setas para esquerda e direita giram a nave \n Seta para cima liga os propulsores", (windowWidth - 10) / 12, (windowHeight - 8) / 5);
-        text("Barra de espaço ativa os lasers", (windowWidth - 10) / 12, (windowHeight - 8) / 1.75);
+        text("Setas para esquerda e direita giram a nave \n Seta para cima liga os propulsores", (windowWidth - 10) / 15, (windowHeight - 8) / 5);
+        text("Barra de espaço ativa os lasers", (windowWidth - 10) / 15, (windowHeight - 8) / 1.75);
         textSize(50);
         fill(255);
-        text("Press ENTER to start", (windowWidth - 10) / 12, (windowHeight - 8) / 1.05);
+        text("Press ENTER to start", (windowWidth - 10) / 15, (windowHeight - 8) / 1.05);
     }
 
     if (screen == 2) { //Tela do jogo
