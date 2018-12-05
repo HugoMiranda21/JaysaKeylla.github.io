@@ -76,7 +76,7 @@ function draw() {
         textFont(font);
         textSize(250);
         fill(255);
-        text("START", (windowWidth - 10) / 5, (windowHeight - 8) / 2);
+        text("ASTEROIDS", (windowWidth - 10) / 5, (windowHeight - 8) / 2);
         textSize(20);
         fill(255);
         text("Você foi promovido a capitão!!! \n E a Frota Estelar tem uma missão para você e sua equipe, destrua os asteróides que ameaçam a Terra com a sua nova nave Dstar", (windowWidth - 10) / 12, (windowHeight - 8) / 1.5);
