@@ -82,7 +82,7 @@ function draw() {
         text("Você foi promovido a capitão!!! \n E a Frota Estelar tem uma missão para você e sua equipe, destrua os asteróides que ameaçam a Terra com a sua nova nave Dstar", (windowWidth - 10) / 12, (windowHeight - 8) / 1.5);
         textSize(50);
         fill(255);
-        text("Press ENTER to start", (windowWidth - 10) / 2, (windowHeight - 8) / 1.05);
+        text("Press ENTER to start", (windowWidth - 10) / 12, (windowHeight - 8) / 1.05);
     }
     if(screen ==1){
         image(arrows,(windowWidth - 10)/2, (windowHeight - 8) / 15);
@@ -95,7 +95,7 @@ function draw() {
         text("Barra de espaço ativa os lasers", (windowWidth - 10) / 12, (windowHeight - 8) / 1.75);
         textSize(50);
         fill(255);
-        text("Press ENTER to start", (windowWidth - 10) / 2, (windowHeight - 8) / 1.05);
+        text("Press ENTER to start", (windowWidth - 10) / 12, (windowHeight - 8) / 1.05);
     }
 
     if (screen == 2) { //Tela do jogo
