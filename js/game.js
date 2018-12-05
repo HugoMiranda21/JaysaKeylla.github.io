@@ -80,20 +80,20 @@ function draw() {
         textSize(20);
         fill(255);
         text("Você foi promovido a capitão!!! \n E a Frota Estelar tem uma missão para você e sua equipe, destrua os asteróides que ameaçam a Terra com a sua nova nave Dstar", (windowWidth - 10) / 12, (windowHeight - 8) / 1.5);
-        textSize(35);
+        textSize(50);
         fill(255);
         text("Press ENTER to start", (windowWidth - 10) / 2, (windowHeight - 8) / 1.05);
     }
     if(screen ==1){
-        image(arrows,(windowWidth - 10)/3, (windowHeight - 8) / 15);
-        image(up,(windowWidth - 10)/1.5, (windowHeight - 8) / 15);
-        image(spacebar, (windowWidth - 10)/3, (windowHeight - 8) / 2);
+        image(arrows,(windowWidth - 10)/2, (windowHeight - 8) / 15);
+        image(up,(windowWidth - 10)/1.25, (windowHeight - 8) / 15);
+        image(spacebar, (windowWidth - 10)/2, (windowHeight - 8) / 2);
         textFont(font);
-        textSize(20);
+        textSize(30);
         fill(255);
         text("Setas para esquerda e direita giram a nave \n Seta para cima liga os propulsores", (windowWidth - 10) / 12, (windowHeight - 8) / 5);
-        text("Barra de espaço ativa os lasers", (windowWidth - 10) / 12, (windowHeight - 8) / 1.5);
-        textSize(35);
+        text("Barra de espaço ativa os lasers", (windowWidth - 10) / 12, (windowHeight - 8) / 1.75);
+        textSize(50);
         fill(255);
         text("Press ENTER to start", (windowWidth - 10) / 2, (windowHeight - 8) / 1.05);
     }
