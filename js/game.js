@@ -19,6 +19,10 @@ var hitasteroid;
 var explosion = [];
 var restart;
 var star;
+var arrows;
+var spacebar;
+var up;
+var beep;
 
 
 
@@ -35,6 +39,10 @@ function preload() {
     hitasteroid = loadSound("sprites/hitasteroid.mp3");
     restart = loadSound("sprites/restart.mp3");
     start = loadSound("sprites/start.mp3");
+   spacebar = loadImage ("sprites/spacebar.png");
+   arrows = loadImage ("sprites/arrow.png");
+   up = loadImage ("sprites/arrows.png");
+   beep = loadSound("sprites/beep.mp3");
     for (var i = 0; i < 6; i++) { //ETAPA 10 ANIMAÇÃO DA EXPLOSÃO
         explosion[i] = loadImage("sprites/boom" + i + ".png");
     }
@@ -47,17 +55,19 @@ function setup() {
     for (var i = 0; i < 5; i++) {
         enemies.push(new Enemy());
     }
- 
+ setInterval(newAsteroids, time);
 }
+
 function newAsteroids() {
     if (screen == 1) {
         enemies.push(new Enemy());
 
         if (time > 200) {
-            time -= 200;
+            time --;
         }
     }
 }
+
 
 function draw() {
     
@@ -70,12 +80,25 @@ function draw() {
         textSize(20);
         fill(255);
         text("Você foi promovido a capitão!!! \n E a Frota Estelar tem uma missão para você e sua equipe, destrua os asteróides que ameaçam a Terra com a sua nova nave Dstar", (windowWidth - 10) / 12, (windowHeight - 8) / 1.5);
+        textSize(35);
+        fill(255);
+        text("Press ENTER to start", (windowWidth - 10) / 2, (windowHeight - 8) / 1.05);
+    }
+    if(screen ==1){
+        image(arrows,(windowWidth - 10)/3, (windowHeight - 8) / 15);
+        image(up,(windowWidth - 10)/1.5, (windowHeight - 8) / 15);
+        image(spacebar, (windowWidth - 10)/3, (windowHeight - 8) / 2);
+        textFont(font);
         textSize(20);
         fill(255);
-        text("Press ENTER to start", (windowWidth - 10) / 12, (windowHeight - 8) / 1.25);
+        text("Setas para esquerda e direita giram a nave \n Seta para cima liga os propulsores", (windowWidth - 10) / 12, (windowHeight - 8) / 5);
+        text("Barra de espaço ativa os lasers", (windowWidth - 10) / 12, (windowHeight - 8) / 1.5);
+        textSize(35);
+        fill(255);
+        text("Press ENTER to start", (windowWidth - 10) / 2, (windowHeight - 8) / 1.05);
     }
 
-    if (screen == 1) { //Tela do jogo
+    if (screen == 2) { //Tela do jogo
         
         if (score > level * 2500) {
             levelsound.play();
@@ -92,7 +115,7 @@ function draw() {
         for (var i = 0; i < enemies.length; i++) {
             if (dstar.hits(enemies[i])) {
                 hitasteroid.play();
-                screen = 2;
+                screen = 3;
 
 
             }
@@ -105,7 +128,7 @@ function draw() {
         for (var k = 0; k < bonus.length; k++) { //ETAPA 07 quando se passa de fase aparecem asteroids especiais que valem mais pontos
             if (dstar.hits(bonus[k])) {
                 hitasteroid.play();
-                screen = 2;
+                screen = 3;
             }
 
             bonus[k].render();
@@ -177,7 +200,7 @@ function draw() {
             text("GET A LIFE", 500, 200);
         }
     }
-    if (screen == 2) { // Tela de game over
+    if (screen == 3) { // Tela de game over
         background(gameover);
         score=0;
         level=1;
@@ -196,7 +219,7 @@ function keyReleased() {
 
 // ETAPA 2 - MOVIMENTAÇÃO DO JOGADOR
 function keyPressed() {
-    if(screen==1){
+    if(screen==2){
         if (key == " ") {
             lasers.push(new Laser(dstar.pos, dstar.heading));
             shot.play();
@@ -210,17 +233,25 @@ function keyPressed() {
         } else if (!keyCode == UP_ARROW) {
         boost.stop();
         }
-    }if(screen==0){
+    }else if(screen==0){
          if (keyCode == ENTER) {
-            start.play();
+            
                 if (enemies == [] || enemies == 0) {
                     for (var i = 0; i < 1; i++) {
                          enemies.push(new Enemy());
             }
         }
         screen = 1;
+        beep.play();
     }
-} if(screen==2){
+}else if (screen==1){
+     if (keyCode == ENTER) {
+        screen=2
+        start.play();
+        }
+     
+ 
+}else if(screen==3){
     if (keyCode == ENTER) {
         enemies = [];
         bonus = [];
@@ -232,4 +263,4 @@ function keyPressed() {
        
         }
     } 
-}  
+} 
